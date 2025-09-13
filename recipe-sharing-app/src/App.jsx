@@ -2,19 +2,31 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Routes, Route, Link } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
+import RecipeDetails from './components/RecipeDetails';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <div style={{ padding: '2rem' }}>
+       <div style={{ padding: '2rem' }}>
       <h1>🍳 Recipe Sharing App</h1>
       <AddRecipeForm />
+      <Routes>
+        <Route path="/" element={<RecipeList />} />
+        <Route
+          path="/recipe/:id"
+          element={<RecipeDetailsWrapper />}
+        />
+        <AddRecipeForm />
       <RecipeList />
+      </Routes>
     </div>
+      
+    
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -38,5 +50,10 @@ function App() {
     </>
   )
 }
+import { useParams } from 'react-router-dom';
+const RecipeDetailsWrapper = () => {
+  const { id } = useParams();
+  return <RecipeDetails recipeId={Number(id)} />;
+};
 
 export default App
