@@ -7,6 +7,7 @@ function Navbar() {
         backgroundColor: "#333",
         padding: "10px",
         display: "flex",
+        justifyContent: "center",   
         gap: "15px"
       }}
     >
@@ -27,3 +28,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
