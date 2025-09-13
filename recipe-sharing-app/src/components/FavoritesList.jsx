@@ -1,22 +1,28 @@
 import { useRecipeStore } from '../store/recipeStore';
+import { Link } from 'react-router-dom';
 
-const FavoriteButton = ({ recipeId }) => {
-  const favorites = useRecipeStore((state) => state.favorites);
-  const addFavorite = useRecipeStore((state) => state.addFavorite);
-  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
+const FavoritesList = () => {
+  const favorites = useRecipeStore((state) =>
+    state.favorites
+      .map((id) => state.recipes.find((recipe) => recipe.id === id)) 
+      .filter(Boolean) 
+  );
 
-  const isFavorite = favorites.includes(recipeId);
-
-  const toggleFavorite = () => {
-    if (isFavorite) removeFavorite(recipeId);
-    else addFavorite(recipeId);
-  };
+  if (favorites.length === 0) return <p>No favorite recipes yet.</p>;
 
   return (
-    <button onClick={toggleFavorite} style={{ marginLeft: '1rem' }}>
-      {isFavorite ? '💖 Remove from Favorites' : '🤍 Add to Favorites'}
-    </button>
+    <div>
+      <h2>My Favorites</h2>
+      {favorites.map((recipe) => (  
+        <div key={recipe.id} style={{ marginBottom: '1rem' }}>
+          <Link to={`/recipe/${recipe.id}`}>
+            <h3>{recipe.title}</h3>
+          </Link>
+          <p>{recipe.description}</p>
+        </div>
+      ))}
+    </div>
   );
 };
 
-export default FavoriteButton;
+export default FavoritesList;
