@@ -1,18 +1,8 @@
-<<<<<<< HEAD
-import { create } from 'zustand';
 
-export const useRecipeStore = create((set) => ({
-  recipes: [],
-  addRecipe: (newRecipe) =>
-    set((state) => ({
-      recipes: [...state.recipes, newRecipe],
-    })),
-  setRecipes: (recipes) => set({ recipes }),
-}));
-=======
-import { create } from 'zustand';
 
-export const useRecipeStore = create((set) => ({
+import { create } from 'zustand';
+export const useRecipeStore = create((set, get) => ({
+
   recipes: [],
   
   addRecipe: (newRecipe) =>
@@ -29,5 +19,38 @@ export const useRecipeStore = create((set) => ({
     set((state) => ({
       recipes: state.recipes.filter((r) => r.id !== id),
     })),
+
+
+
+
+  recipes: [],
+  searchTerm: '',
+  filteredRecipes: [],
+
+  addRecipe: (newRecipe) =>
+    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
+  updateRecipe: (updatedRecipe) =>
+    set((state) => ({
+      recipes: state.recipes.map((r) =>
+        r.id === updatedRecipe.id ? updatedRecipe : r
+      ),
+    })),
+  deleteRecipe: (id) =>
+    set((state) => ({
+      recipes: state.recipes.filter((r) => r.id !== id),
+    })),
+
+
+  setSearchTerm: (term) => {
+    set({ searchTerm: term });
+    get().filterRecipes(term);
+  },
+
+  filterRecipes: (term) =>
+    set((state) => ({
+      filteredRecipes: state.recipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(term.toLowerCase())
+      ),
+    })),
 }));
->>>>>>> ff7d6cb (Update)
+
