@@ -1,7 +1,9 @@
 import { useRecipeStore } from '../store/recipeStore';
 import EditRecipeForm from './EditRecipeForm';
 import DeleteRecipeButton from './DeleteRecipeButton';
+import FavoriteButton from './FavoritesList';
 
+<FavoriteButton recipeId={recipe.id} />
 const RecipeDetails = ({ recipeId }) => {
   const recipe = useRecipeStore((state) =>
     state.recipes.find((r) => r.id === recipeId)
