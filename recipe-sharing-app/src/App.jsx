@@ -6,6 +6,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,15 +16,17 @@ function App() {
        <div style={{ padding: '2rem' }}>
       <h1>🍳 Recipe Sharing App</h1>
       <AddRecipeForm />
-      <Routes>
+        <Router>
+        <Routes>
         <Route path="/" element={<RecipeList />} />
         <Route
           path="/recipe/:id"
           element={<RecipeDetailsWrapper />}
         />
-        <AddRecipeForm />
-      <RecipeList />
-      </Routes>
+      <AddRecipeForm />
+        <RecipeList />
+        </Routes>
+        </Router>
     </div>
       
     
