@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { searchUsers } from "../services/githubService";
+import { searchUsers } from "./services/githubService";
 
 const Search = () => {
   const [username, setUsername] = useState("");
@@ -31,7 +32,6 @@ const Search = () => {
         GitHub User Search
       </h1>
 
-    
       <form
         onSubmit={handleSubmit}
         className="bg-white p-4 rounded-2xl shadow-md grid gap-4"
@@ -67,13 +67,10 @@ const Search = () => {
           Search
         </button>
       </form>
-
-      
       <div className="mt-6">
         {loading && <p className="text-gray-600">Loading...</p>}
         {error && <p className="text-red-600">{error}</p>}
 
-        
         <div className="grid gap-4 mt-4">
           {users &&
             users.map((user) => (
