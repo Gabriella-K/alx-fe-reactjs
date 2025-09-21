@@ -1,19 +1,35 @@
 import axios from "axios";
 
 export const fetchUserData = async (username) => {
-  const response = await axios.get(`https://api.github.com/users/${username}`);
-  return response.data;
+  try {
+    const response = await axios.get(`https://api.github.com/users/${username}`);
+    return response.data;
+  } catch (error) {
+    // Handle error gracefully
+    return { error: error.response?.data?.message || "Failed to fetch user data" };
+  }
 };
+
 export const searchUsers = async (username, location, minRepos) => {
-  let query = "";
+  let queryParts = [];
 
-  if (username) query += `${username} in:login`;
-  if (location) query += ` location:${location}`;
-  if (minRepos) query += ` repos:>=${minRepos}`;
+  if (username) queryParts.push(`${username} in:login`);
+  if (location) queryParts.push(`location:${location}`);
+  if (minRepos) queryParts.push(`repos:>=${minRepos}`);
 
-  const response = await axios.get(
-    `https://api.github.com/search/users?q=${query}`
-  );
+  const query = queryParts.join(" ");
 
-  return response.data;
+  if (!query) {
+    return { error: "At least one search parameter is required." };
+  }
+
+  try {
+    const response = await axios.get(
+      `https://api.github.com/search/users?q=${encodeURIComponent(query)}`
+    );
+    return response.data;
+  } catch (error) {
+  
+    return { error: error.response?.data?.message || "Failed to search users" };
+  }
 };
