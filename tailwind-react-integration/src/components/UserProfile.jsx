@@ -1,19 +1,40 @@
-function UserProfile() {
+import React from "react";
+
+const UserProfile = () => {
   return (
-    <div className="bg-gray-100 p-4 sm:p-4 md:p-8 max-w-xs sm:max-w-xs md:max-w-sm mx-auto my-10 sm:my-12 md:my-20 rounded-lg shadow-lg text-center">
-      <img
-        src="https://via.placeholder.com/150"
-        alt="User"
-        className="rounded-full w-24 h-24 sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto"
-      />
-      <h1 className="text-lg sm:text-lg md:text-xl text-blue-800 my-3 md:my-4">
-        John Doe
-      </h1>
-      <p className="text-gray-600 text-sm sm:text-sm md:text-base">
-        Developer at Example Co. Loves to write code and explore new technologies.
-      </p>
+    <div className="max-w-sm mx-auto mt-10">
+      
+      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center">
+        
+        
+        <img
+          src="https://via.placeholder.com/150"
+          alt="User"
+          className="w-32 h-32 rounded-full object-cover mb-4 hover:scale-110 transition-transform duration-300 ease-in-out"
+        />
+
+        
+        <h2 className="text-2xl font-semibold text-gray-800 hover:text-blue-500 transition-colors duration-300">
+          Gabriella Ucyeye
+        </h2>
+
+        
+        <p className="text-gray-500 mt-2 text-center">
+          Software Engineer | React Enthusiast
+        </p>
+
+        
+        <div className="mt-4 flex gap-3">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300">
+            Follow
+          </button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+            Message
+          </button>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default UserProfile;
