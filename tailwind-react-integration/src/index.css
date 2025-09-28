@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 @tailwindcss
+=======
+@import "tailwindcss";
+
+>>>>>>> 374d3f5 (Added tailwind-react-integration project with Tailwind setup)
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -67,7 +72,10 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+<<<<<<< HEAD
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+=======
+>>>>>>> 374d3f5 (Added tailwind-react-integration project with Tailwind setup)
