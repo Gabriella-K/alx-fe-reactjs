@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150?text=Spaghetti+Carbonara"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/150?text=Chicken+Tikka+Masala"
+  },
+  {
+    "id": 3,
+    "title": "Avocado Toast",
+    "summary": "Simple yet delicious smashed avocado on toasted bread with toppings like eggs or tomatoes.",
+    "image": "https://via.placeholder.com/150?text=Avocado+Toast"
+  },
+  {
+    "id": 4,
+    "title": "Poke Bowl",
+    "summary": "Fresh Hawaiian-inspired bowl with raw fish, rice, veggies, and flavorful sauces.",
+    "image": "https://via.placeholder.com/150?text=Poke+Bowl"
+  }
+]
