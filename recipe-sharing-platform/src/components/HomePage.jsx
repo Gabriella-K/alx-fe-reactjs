@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import recipeData from '../data.json'; 
+import { Link } from 'react-router-dom';
+import recipeData from '../data.json';
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -7,7 +8,11 @@ const HomePage = () => {
   useEffect(() => {
     
     setRecipes(recipeData);
-  }, []); 
+  }, []);
+
+  if (!recipes || recipes.length === 0) {
+    return <div className="text-white text-center p-8">Loading recipes...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-800 to-beige-200 p-8">
@@ -26,12 +31,9 @@ const HomePage = () => {
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
               <p className="text-gray-600">{recipe.summary}</p>
-              <a
-                href={`/recipe/${recipe.id}`}
+              <Link to={`/recipe/${recipe.id}`}
                 className="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-              >
-                View Details
-              </a>
+              >View Details</Link>
             </div>
           </div>
         ))}

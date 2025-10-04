@@ -3,24 +3,82 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150?text=Spaghetti+Carbonara"
+    "image": "https://via.placeholder.com/150?text=Spaghetti+Carbonara",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta",
+      "2 large eggs",
+      "50g Parmesan cheese",
+      "Black pepper",
+      "Salt"
+    ],
+    "instructions": [
+      "Cook spaghetti in salted water until al dente.",
+      "Fry pancetta until crispy.",
+      "Whisk eggs and Parmesan together.",
+      "Mix hot pasta with pancetta, then off heat, stir in egg mixture.",
+      "Season with pepper and serve."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150?text=Chicken+Tikka+Masala"
+    "image": "https://via.placeholder.com/150?text=Chicken+Tikka+Masala",
+    "ingredients": [
+      "500g chicken breast",
+      "200ml yogurt",
+      "2 tbsp tikka masala spice",
+      "1 can tomatoes",
+      "100ml cream",
+      "1 onion",
+      "2 garlic cloves"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices for 1 hour.",
+      "Grill chicken until charred.",
+      "Sauté onion and garlic, add tomatoes and cream.",
+      "Simmer sauce, then add chicken.",
+      "Serve with rice."
+    ]
   },
   {
     "id": 3,
     "title": "Avocado Toast",
     "summary": "Simple yet delicious smashed avocado on toasted bread with toppings like eggs or tomatoes.",
-    "image": "https://via.placeholder.com/150?text=Avocado+Toast"
+    "image": "https://via.placeholder.com/150?text=Avocado+Toast",
+    "ingredients": [
+      "1 avocado",
+      "2 slices bread",
+      "1 egg",
+      "Salt and pepper",
+      "Cherry tomatoes (optional)"
+    ],
+    "instructions": [
+      "Toast the bread slices.",
+      "Mash avocado with salt and pepper.",
+      "Spread on toast, top with a fried egg or tomatoes.",
+      "Serve immediately."
+    ]
   },
   {
     "id": 4,
     "title": "Poke Bowl",
     "summary": "Fresh Hawaiian-inspired bowl with raw fish, rice, veggies, and flavorful sauces.",
-    "image": "https://via.placeholder.com/150?text=Poke+Bowl"
+    "image": "https://via.placeholder.com/150?text=Poke+Bowl",
+    "ingredients": [
+      "200g sushi-grade tuna",
+      "1 cup cooked rice",
+      "1 avocado",
+      "1 tbsp soy sauce",
+      "1 tsp sesame oil",
+      "Seaweed (optional)"
+    ],
+    "instructions": [
+      "Cube tuna and marinate in soy sauce and sesame oil.",
+      "Assemble rice, tuna, and sliced avocado in a bowl.",
+      "Add toppings like seaweed.",
+      "Serve fresh."
+    ]
   }
 ]
