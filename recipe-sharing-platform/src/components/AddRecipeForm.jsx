@@ -11,7 +11,8 @@ const AddRecipeForm = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target; // Destructure name
+    const value = e.target.value; // Explicitly get value
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
