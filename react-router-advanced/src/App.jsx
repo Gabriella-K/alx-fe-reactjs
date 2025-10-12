@@ -9,10 +9,10 @@ import NotFound from "./components/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   return (
-    <>
+    <div className="App">
       <nav
         style={{
           padding: "10px",
@@ -48,7 +48,7 @@ function App() {
             color: isActive ? "#007bff" : "black",
           })}
         >
-          BlogPost
+          Blog
         </NavLink>
         <NavLink
           to="/login"
@@ -65,7 +65,7 @@ function App() {
         <Route
           path="/profile/*"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <ProtectedRoute>
               <Profile />
             </ProtectedRoute>
           }
@@ -74,14 +74,10 @@ function App() {
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
         <Route path="/blog/:id" element={<BlogPost />} />
-        <Route
-          path="/login"
-          element={<Login setIsAuthenticated={setIsAuthenticated} />}
-        />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <BrowserRouter />
-    </>
+    </div>
   );
 }
 
