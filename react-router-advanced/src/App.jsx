@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -48,7 +48,7 @@ function App() {
             color: isActive ? "#007bff" : "black",
           })}
         >
-          Blog
+          BlogPost
         </NavLink>
         <NavLink
           to="/login"
@@ -73,7 +73,7 @@ function App() {
           <Route path="details" element={<ProfileDetails />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
-        <Route path="/blog/:postId" element={<Blog />} />
+        <Route path="/blog/:postId" element={<BlogPost />} />
         <Route
           path="/login"
           element={<Login setIsAuthenticated={setIsAuthenticated} />}

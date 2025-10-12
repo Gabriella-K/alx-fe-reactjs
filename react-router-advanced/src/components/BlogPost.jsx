@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-const Blog = () => {
+const BlogPost = () => {
   const { postId } = useParams();
   return (
     <div style={{ padding: "20px" }}>
@@ -12,4 +12,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPost;
