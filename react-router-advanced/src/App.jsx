@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import BlogPost from "./components/BlogPost";
@@ -77,6 +78,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <BrowserRouter />
     </div>
   );
 }
