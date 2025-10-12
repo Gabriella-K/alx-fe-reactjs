@@ -18,6 +18,7 @@ const FormikForm = () => {
         initialValues={{ username: "", email: "", password: "" }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
+          // Simulate API submission
           console.log("Form submitted:", values);
           alert("Registration successful! (Simulated)");
           resetForm();
@@ -32,7 +33,6 @@ const FormikForm = () => {
                 type="text"
                 id="username"
                 name="username"
-                as="input"
                 style={{ width: "100%", padding: "8px", marginTop: "5px" }}
               />
               <ErrorMessage
@@ -48,7 +48,6 @@ const FormikForm = () => {
                 type="email"
                 id="email"
                 name="email"
-                as="input"
                 style={{ width: "100%", padding: "8px", marginTop: "5px" }}
               />
               <ErrorMessage
@@ -64,7 +63,6 @@ const FormikForm = () => {
                 type="password"
                 id="password"
                 name="password"
-                as="input"
                 style={{ width: "100%", padding: "8px", marginTop: "5px" }}
               />
               <ErrorMessage
