@@ -21,7 +21,7 @@ const PostsComponent = () => {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <div style={{ textAlign: "center", marginTop: "50px", color: "red" }}>
         Error: {error.message}
